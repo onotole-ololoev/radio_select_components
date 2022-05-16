@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Radio from "./components/Radio";
+import Select from "./components/Select";
 
 function App() {
+
+  const arr = ['yo!', 'wow!', 'cmon!!', 'plzzzzz'];
+  let [value, setValue] = useState(arr[0]);
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Radio
+            setValue={setValue}
+            value={value}
+            arr={arr}
+        />
+        <Select
+            setValue={setValue}
+            value={value}
+            arr={arr}
+        />
     </div>
   );
 }
